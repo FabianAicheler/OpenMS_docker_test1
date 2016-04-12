@@ -7,7 +7,7 @@
 #    folder /openms-build
 #
 
-## FROM fabianaicheler/openms_hroest_contrib 
+FROM fabianaicheler/openms_hroest_contrib 
 
 WORKDIR /
 RUN git clone https://github.com/OpenMS/OpenMS.git
