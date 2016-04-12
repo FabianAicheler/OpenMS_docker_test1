@@ -40,20 +40,20 @@ RUN cmake -DBUILD_TYPE=EIGEN ../contrib
 ## hroest/openms_dependencies, therefore we could start here with 
 ## FROM hroest/openms_dependencies 
 
-WORKDIR /
-RUN git clone https://github.com/OpenMS/OpenMS.git
-RUN mkdir openms-build
+#WORKDIR /
+#RUN git clone https://github.com/OpenMS/OpenMS.git
+#RUN mkdir openms-build
 
-WORKDIR /openms-build
+#WORKDIR /openms-build
 
-RUN cmake -DCMAKE_PREFIX_PATH="/contrib-build/;/usr/;/usr/local" -DBOOST_USE_STATIC=OFF ../OpenMS
-RUN make OpenMS
+#RUN cmake -DCMAKE_PREFIX_PATH="/contrib-build/;/usr/;/usr/local" -DBOOST_USE_STATIC=OFF ../OpenMS
+#RUN make OpenMS
 
 
 ## End of library, the above image should be available at
 ## hroest/openms_lib, therefore we could start here with 
 ## FROM hroest/openms_lib 
 
-WORKDIR /openms-build
+#WORKDIR /openms-build
 
-RUN make 
+#RUN make 
