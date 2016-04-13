@@ -7,6 +7,7 @@
 #    folder /openms-build
 #
 
+#contrib tag section
 FROM ubuntu:12.04
 
 RUN apt-get -y update
@@ -37,23 +38,23 @@ RUN cmake -DBUILD_TYPE=EIGEN ../contrib
 
 
 ## End of dependencies, the above image should be available at
-## hroest/openms_dependencies, therefore we could start here with 
-## FROM hroest/openms_dependencies 
+## fabianaicheler/openms_hroest_contrib:contrib, therefore we could start here with 
+## FROM fabianaicheler/openms_hroest_contrib:contrib
 
 #WORKDIR /
-#RUN git clone https://github.com/OpenMS/OpenMS.git
-#RUN mkdir openms-build
+RUN git clone https://github.com/OpenMS/OpenMS.git
+RUN mkdir openms-build
 
-#WORKDIR /openms-build
+WORKDIR /openms-build
 
-#RUN cmake -DCMAKE_PREFIX_PATH="/contrib-build/;/usr/;/usr/local" -DBOOST_USE_STATIC=OFF ../OpenMS
-#RUN make OpenMS
+RUN cmake -DCMAKE_PREFIX_PATH="/contrib-build/;/usr/;/usr/local" -DBOOST_USE_STATIC=OFF ../OpenMS
+RUN make OpenMS
 
 
 ## End of library, the above image should be available at
-## hroest/openms_lib, therefore we could start here with 
-## FROM hroest/openms_lib 
+## FROM fabianaicheler/openms_hroest_contrib:library, therefore we could start here with 
+## FROM fabianaicheler/openms_hroest_contrib:library
 
-#WORKDIR /openms-build
+WORKDIR /openms-build
 
-#RUN make 
+RUN make
