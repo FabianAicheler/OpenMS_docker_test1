@@ -1,8 +1,3 @@
-# Concatenated script to build OpenMS
-# 
-#  - downloads the OpenMS dependencies to /contrib and builds them in the
-#    folder /contrib-build
-#
 #  - downloads the OpenMS source code to /OpenMS and builds the code in the
 #    folder /openms-build
 #
@@ -23,6 +18,6 @@ RUN make OpenMS
 ## hroest/openms_lib, therefore we could start here with 
 ## FROM hroest/openms_lib 
 
-WORKDIR /openms-build
+#WORKDIR /openms-build
 
-RUN make 
+#RUN make 
