@@ -10,6 +10,8 @@
 FROM ubuntu:12.04
 
 RUN \
+apt-get autoremove && \
+apt-get clean && \
 apt-get -y update && \
 apt-get install -y cmake g++ autoconf qt4-dev-tools patch libtool make git && \
 # for add-apt-repository, used to get repo for newer boost version
@@ -23,6 +25,7 @@ apt-get install -qq libboost-date-time1.54-dev \
                     libboost-regex1.54-dev \
                     libboost-math1.54-dev \
                     libboost-random1.54-dev && \
+apt-get clean && \
 git clone https://github.com/OpenMS/contrib.git  && \
 mkdir contrib-build
 WORKDIR /contrib-build
