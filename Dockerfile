@@ -78,7 +78,7 @@ Run \
 apt-get install -qq libboost-random1.54-dev && \
 apt-get clean
 
-git clone https://github.com/OpenMS/contrib.git  && \
+RUN git clone https://github.com/OpenMS/contrib.git  && \
 mkdir contrib-build
 WORKDIR /contrib-build
 RUN cmake -DBUILD_TYPE=SEQAN ../contrib && \
