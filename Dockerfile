@@ -1,4 +1,4 @@
-FROM fabianaicheler/openms_hroest_contrib:contrib
+FROM fabianaicheler/openms_docker_test1:contrib_sr_buildinstructions
 
 WORKDIR /
 RUN git clone https://github.com/OpenMS/OpenMS.git
