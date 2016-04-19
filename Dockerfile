@@ -1,12 +1,3 @@
-# Concatenated script to build OpenMS
-# 
-#  - downloads the OpenMS dependencies to /contrib and builds them in the
-#    folder /contrib-build
-#
-#  - downloads the OpenMS source code to /OpenMS and builds the code in the
-#    folder /openms-build
-#
-
 FROM ubuntu:12.04
 
 RUN \
