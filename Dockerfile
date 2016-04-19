@@ -12,17 +12,10 @@ FROM ubuntu:12.04
 RUN \
 apt-get -y update && \
 apt-get install -y cmake g++ autoconf qt4-dev-tools patch libtool make git && \
-# for add-apt-repository, used to get repo for newer boost version
-apt-get install -y software-properties-common python-software-properties && \
-add-apt-repository --yes ppa:boost-latest/ppa && \
-apt-get update && \
-# install dependencies
-apt-get install -qq libsvm-dev libglpk-dev libzip-dev zlib1g-dev libxerces-c-dev libbz2-dev && \
-apt-get install -qq libboost-date-time1.54-dev \
-                    libboost-iostreams1.54-dev \
-                    libboost-regex1.54-dev \
-                    libboost-math1.54-dev \
-                    libboost-random1.54-dev && \
+libqt4-core libqt4-dev libqt4-gui libqt4-opengl-dev automake libqtwebkit-dev && \
+libboost-regex-dev libboost-iostreams-dev libboost-date-time-dev libboost-math-dev && \
+libsvm-dev libglpk-dev libzip-dev zlib1g-dev libxerces-c-dev libbz2-dev
+
 git clone https://github.com/OpenMS/contrib.git  && \
 mkdir contrib-build
 WORKDIR /contrib-build
